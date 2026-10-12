@@ -1,0 +1,116 @@
+﻿<Window x:Class="WpfAppkk.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfAppkk"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid Margin="10">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+
+
+
+        <GroupBox Header="Dane pracownika"
+                  Grid.Row="0" Grid.Column="0"
+                  Margin="5" Padding="10">
+
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="100"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+
+                <Label Content="Imię:" 
+                       HorizontalAlignment="Left" 
+                       Grid.Row="2" 
+                       VerticalAlignment="Top" Grid.Column="1" Margin="56,0,0,0"/>
+                <TextBox x:Name="txtImie" 
+                         HorizontalAlignment="Left" 
+                         Margin="24,30,0,0" 
+                         Grid.Row="2" 
+                         TextWrapping="Wrap" 
+                         Text="" 
+                         VerticalAlignment="Top" 
+                         Width="100" Grid.Column="1"/>
+                <Label Content="Nazwisko:" 
+                       HorizontalAlignment="Left" 
+                       Margin="43,48,0,0" 
+                       Grid.Row="2" 
+                       VerticalAlignment="Top" Grid.Column="1"/>
+                <TextBox x:Name="txtNazwisko" 
+                         HorizontalAlignment="Left" 
+                         Margin="24,79,0,0" 
+                         Grid.Row="2" 
+                         TextWrapping="Wrap" 
+                         Text="" 
+                         VerticalAlignment="Top" 
+                         Width="100" Grid.Column="1"/>
+                <Label Content="Stanowisko:" 
+                       HorizontalAlignment="Left" 
+                       Margin="38,102,0,0" 
+                       Grid.Row="2" 
+                       VerticalAlignment="Top" Grid.Column="1"/>
+                <ComboBox x:Name="cmbStanowisko" 
+                          HorizontalAlignment="Left" 
+                          Margin="4,136,0,0" 
+                          Grid.Row="2" 
+                          VerticalAlignment="Top" 
+                          Width="140" Grid.Column="1">
+                    <ComboBoxItem Content="Kierownik"/>
+                    <ComboBoxItem Content="Starszy programista"/>
+                    <ComboBoxItem Content="Młodszy programista"/>
+                    <ComboBoxItem Content="Tester"/>
+                </ComboBox>
+            </Grid>
+        </GroupBox>
+
+        <GroupBox Header="Generowanie hasła"
+                  Grid.Row="0" Grid.Column="1"
+                  Margin="5" Padding="10">
+            <StackPanel>
+                <Label Content="Ile znaków?"/>
+                <TextBox x:Name="txtDlugosc"
+                         Margin="3" Height="25"/>
+                <CheckBox x:Name="chkLitery"
+                          Content="Małe i wielkie litery"
+                          IsChecked="True"
+                          Margin="3,10,3,3"/>
+                <CheckBox x:Name="chkCyfry"
+                          Content="Cyfry"
+                          Margin="3"/>
+                <CheckBox x:Name="chkSpecjalne"
+                          Content="Znaki specjalne"
+                          Margin="3"/>
+                <Button Content="Generuj hasło"
+                        Margin="3,15,3,3"
+                        Padding="5"
+                        Click="GenerujHaslo_Click"/>
+            </StackPanel>
+        </GroupBox>
+        <Button Grid.Row="1" Grid.Column="0"
+                Grid.ColumnSpan="2"
+                Content="Zatwierdź"
+                Width="150" Height="35"
+                Margin="5,10,5,0"
+                HorizontalAlignment="Center"
+                Background="#00695C"
+                Foreground="White"
+                Click="Zatwierdz_Click"/>
+
+    </Grid>
+</Window>
